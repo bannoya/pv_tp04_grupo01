@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { comparacion } from "./Comparacion"
+import {comparacion,rendirse} from "./Comparacion"
+
 
 const numeroRandom = Math.floor(Math.random() * 101)
 function Ejercicio01() {
@@ -7,14 +8,16 @@ function Ejercicio01() {
 
     const [resultado, setResultado] = useState("")
 
+    const [contador, setContador] = useState(1);
+
+    const [mensaje, setMensaje] = useState("");
+
     const manejarSubmit = (e) => {
         e.preventDefault()
         console.log(num, numeroRandom)
 
     }
 
-
-   
 
     return (
         <div>
@@ -31,15 +34,17 @@ function Ejercicio01() {
                     />
                 </div>
 
-                <button onClick={() => setResultado(comparacion(num, numeroRandom))}>
+                <button onClick={() =>{
+                    setResultado(comparacion(num, numeroRandom,contador));
+                    setContador(contador+1)}}>
                     Verificar
                 </button>
-
-                <p>Resultado: {resultado}</p>
+                 <p style={{ whiteSpace: "pre-line" }}>{resultado}</p>
 
             </form>
 
-            <button type="oneClick">Me Rindo</button>
+            <button onClick={() => setMensaje(rendirse(numeroRandom,contador-1))}>Me Rindo</button>
+            <p>{mensaje}</p>
         </div>
 
     )
