@@ -9,6 +9,6 @@ export function comparacion(num, numeroRandom) {
     }
 }
 export function rendirse(numeroRandom, contador) {
-    return ("El número era " + numeroRandom + ".Realizaste " + contador + " intentos")
+    return ("El número era " + numeroRandom + ", Realizaste " + contador + " intentos")
 }
  

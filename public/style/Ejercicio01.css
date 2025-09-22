@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 350px;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.attempts span {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-number {
+  padding: 0.7rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  text-align: center;
+}
+
+.input-number:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.6);
+}
+
+.btn {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.verify {
+  background: #2ecc71;
+  color: white;
+}
+
+.verify:hover {
+  background: #27ae60;
+}
+
+.surrender {
+  background: #e74c3c;
+  color: white;
+  margin-top: 1rem;
+}
+
+.surrender:hover {
+  background: #c0392b;
+}
+
+.resultado {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2980b9;
+  margin-bottom: 1rem;
+}
+
+.mensaje {
+  font-size: 1rem;
+  color: #8e44ad;
+  font-weight: bold;
+}
