@@ -35,7 +35,7 @@ function Ejercicio01() {
                 </div>
 
                 <button onClick={() =>{
-                    setResultado(comparacion(num, numeroRandom,contador));
+                    setResultado(comparacion(num, numeroRandom));
                     setContador(contador+1)}}>
                     Verificar
                 </button>
