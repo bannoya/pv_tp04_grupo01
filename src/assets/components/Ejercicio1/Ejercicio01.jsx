@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {comparacion,rendirse} from "./Comparacion"
+import {comparacion,rendirse} from "./comparacion"
 import "../../../../public/style/Ejercicio01.css"
 
 const numeroRandom = Math.floor(Math.random() * 100 + 1)
