@@ -1,14 +1,14 @@
 import { useState } from "react"
-import {comparacion,rendirse} from "./Comparacion"
+import {comparacion,rendirse} from ".comparacion"
 
 
-const numeroRandom = Math.floor(Math.random() * 101)
+const numeroRandom = Math.floor(Math.random() * 100 + 1)
 function Ejercicio01() {
     const [num, setNum] = useState("")
 
     const [resultado, setResultado] = useState("")
 
-    const [contador, setContador] = useState(1);
+    const [contador, setContador] = useState(0);
 
     const [mensaje, setMensaje] = useState("");
 
@@ -23,7 +23,7 @@ function Ejercicio01() {
         <div>
             <h1>Adivinar el numero</h1>
             <p>Ingresa un numero del 1 al 100</p>
-            <p>Cantidad de intentos </p>
+            <p>Cantidad de intentos: {contador} </p>
             <form onSubmit={manejarSubmit}>
                 <div>
                     <input
@@ -43,7 +43,7 @@ function Ejercicio01() {
 
             </form>
 
-            <button onClick={() => setMensaje(rendirse(numeroRandom,contador-1))}>Me Rindo</button>
+            <button onClick={() => setMensaje(rendirse(numeroRandom,contador))}>Me Rindo</button>
             <p>{mensaje}</p>
         </div>
 
