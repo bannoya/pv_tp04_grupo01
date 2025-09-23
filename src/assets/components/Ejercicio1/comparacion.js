@@ -11,4 +11,3 @@ export function comparacion(num, numeroRandom) {
 export function rendirse(numeroRandom, contador) {
     return ("El nÃºmero era " + numeroRandom + ", Realizaste " + contador + " intentos")
 }
- 
