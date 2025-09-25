@@ -12,6 +12,8 @@ function Ejercicio01() {
 
     const [mensaje, setMensaje] = useState("");
 
+    
+
     const manejarSubmit = (e) => {
         e.preventDefault()
         console.log(num, numeroRandom)
