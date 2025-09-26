@@ -16,21 +16,39 @@ function Ejercicio02() {
     const [colorBotones, setColorBotones] = useState(colores.slice(0, 4));
     const [mensaje, setMensaje] = useState("");
     const [contador, setContador] = useState(0);
+    const [ganador, setGanador] = useState(false);
 
 
     useEffect(() => {
-        for (let index = 0; index < colorBotones.length; index++) {
-            for (let index = 0; index < colores.length; index++) {
-                console.log(colores[index])
-                 if (colorBotones[0] == colores[index]&& colorBotones[1] == colores[index]&&colorBotones[2] == colores[index]&&colorBotones[3] == colores[index])
-                alert("Ganaste crack")
-            }
-           
+        let haGanado = false;
+        for (let i = 0; i < colores.length; i++) {
+            let contador = 0;
+            for (let index = 0; index < colorBotones.length; index++) {
 
+                if (colorBotones[index] == colores[i]) {
+                    contador++;
+                    console.log(contador)
+                }
+
+                if (contador >= 3) {
+                    haGanado = true;
+                    break;
+                } 
+
+            }
+
+
+        }
+        if (haGanado) {
+            setGanador("¡Has ganado!");
+            alert("¡Felicidades, has ganado!");
+        } else {
+            setGanador("Seguir jugando");
         }
 
 
         setMensaje(`Intento ${contador}`);
+
 
     }, [contador]);
 
@@ -63,6 +81,7 @@ function Ejercicio02() {
                 </div>
 
                 <h2>{mensaje}</h2>
+                <h2>{ganador}</h2>
             </div>
         </>
     )
