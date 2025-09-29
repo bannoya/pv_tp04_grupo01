@@ -1,7 +1,7 @@
 
 import { useState } from "react"
 import { comparacion, rendirse } from "./comparacion"
-import "../../../../public/style/Ejercicio01.css"
+import "../../../../public/style/AdivinaElNumero.css"
 
 const numeroRandom = Math.floor(Math.random() * 100 + 1)
 function Ejercicio01() {

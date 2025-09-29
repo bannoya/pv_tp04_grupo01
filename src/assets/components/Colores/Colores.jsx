@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import "../../../../public/style/Ejercicio02.css"
+import "../../../../public/style/Colores.css"
 
 
 function Ejercicio02() {
