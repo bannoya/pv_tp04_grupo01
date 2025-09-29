@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+import "../../../../public/style/Ejercicio02.css"
+
 
 function Ejercicio02() {
     const colores = [
@@ -17,10 +19,12 @@ function Ejercicio02() {
     const [mensaje, setMensaje] = useState("");
     const [contador, setContador] = useState(0);
     const [ganador, setGanador] = useState(false);
+    
 
 
     useEffect(() => {
         let haGanado = false;
+        
         for (let i = 0; i < colores.length; i++) {
             let contador = 0;
             for (let index = 0; index < colorBotones.length; index++) {
@@ -33,7 +37,7 @@ function Ejercicio02() {
                 if (contador >= 3) {
                     haGanado = true;
                     break;
-                } 
+                }
 
             }
 
@@ -41,7 +45,8 @@ function Ejercicio02() {
         }
         if (haGanado) {
             setGanador("¡Has ganado!");
-            alert("¡Felicidades, has ganado!");
+            alert("¡Felicidades, has ganado! Aprete aceptar para ver los resultados");
+            haGanado = false
         } else {
             setGanador("Seguir jugando");
         }
@@ -60,31 +65,30 @@ function Ejercicio02() {
 
         setColorBotones(nuevosColores);
         setContador((c) => c + 1);
-    };
+    }
 
     return (
-        <>
-            <div>
-                <h1>Ejercicio 02</h1>
-                <div>
-                    {colorBotones.map((c, i) => (
-                        <button
-                            key={i}
-                            onClick={manejarClick}
-                            style={{
-                                backgroundColor: c
-                            }}
-                        >
-                            {`Botón ${i + 1}`}
-                        </button>
-                    ))}
-                </div>
+        <div className="ejercicio02-container">
+            <h1 className="ejercicio02-title">Colores</h1>
 
-                <h2>{mensaje}</h2>
-                <h2>{ganador}</h2>
+            <div className="botones-container">
+                {colorBotones.map((c, i) => (
+                    <button
+                        key={i}
+                        onClick={manejarClick}
+                        style={{ backgroundColor: c }}
+                    >
+                        {`Botón ${i + 1}`}
+                    </button>
+                ))}
             </div>
-        </>
+
+            <h2 className="resultado">{mensaje}</h2>
+            <h2 className="resultado">{ganador}</h2>
+        </div>
     )
+
+
 }
 
-export default Ejercicio02;
+export default Ejercicio02
