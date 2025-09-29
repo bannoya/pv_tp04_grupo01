@@ -1,6 +1,6 @@
 import Saludo from './assets/components/Saludo/Saludo'
-import Ejercicio01 from './assets/components/Ejercicio1/Ejercicio01'
-import Ejercicio02 from './assets/components/Ejercicio2/Ejercicio02'
+import AdivinaElNumero from './assets/components/AdivinaElNumero/AdivinaElNumero'
+import Colores from './assets/components/Colores/Colores'
 
 function App() {
   const nombres = {
@@ -19,13 +19,13 @@ function App() {
     <>
       <Saludo nombre={nombres} apellido={apellidos} />
       <></>
-      <Ejercicio01 />
+      <AdivinaElNumero />
       <>
       
       
       
       </>
-      <Ejercicio02 />
+      <Colores />
     </>
   )
 }
