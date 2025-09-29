@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {comparacion,rendirse} from "./comparacion"
+import { comparacion, rendirse } from "./comparacion"
 import "../../../../public/style/Ejercicio01.css"
 
 const numeroRandom = Math.floor(Math.random() * 100 + 1)
@@ -12,12 +12,19 @@ function Ejercicio01() {
 
     const [mensaje, setMensaje] = useState("");
 
-    
+    const [finJuego, setFinJuego] = useState(false)
+
+
 
     const manejarSubmit = (e) => {
         e.preventDefault()
         console.log(num, numeroRandom)
 
+    }
+
+    const rendirseJuego = () => {
+        setMensaje(rendirse(numeroRandom, contador))
+        setFinJuego(true)
     }
 
 
@@ -37,16 +44,22 @@ function Ejercicio01() {
                     />
                 </div>
 
-                <button className="btn verify" onClick={() =>{
+                <button className="btn verify" onClick={() => {
                     setResultado(comparacion(num, numeroRandom));
-                    setContador(contador+1)}}>
+                    setContador(contador + 1)
+                }}>
+                    
                     Verificar
                 </button>
-                 <p className="resultado">{resultado}</p>
+                <p className="resultado">{resultado}</p>
 
             </form>
 
-            <button className="btn surrender" onClick={() => setMensaje(rendirse(numeroRandom,contador))}>Me Rindo</button>
+            <button 
+                className="btn surrender"
+                disabled={finJuego}
+                onClick={ rendirseJuego}>
+                Me Rindo</button>
             <p className="mensaje">{mensaje}</p>
         </div>
 
