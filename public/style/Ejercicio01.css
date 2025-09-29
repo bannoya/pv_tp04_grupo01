@@ -94,3 +94,10 @@ body {
   color: #8e44ad;
   font-weight: bold;
 }
+
+.btn:disabled {
+  background: #bdc3c7;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
