@@ -1,3 +1,4 @@
+
 import { useState } from "react"
 import { comparacion, rendirse } from "./comparacion"
 import "../../../../public/style/Ejercicio01.css"
